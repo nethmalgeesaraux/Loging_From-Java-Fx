@@ -71,11 +71,11 @@ public class CreateAccoutController {
             return;
         }
 
-        if (!isValidPassword(password)) {
-            new Alert(Alert.AlertType.ERROR,
-                    "Password must have add Uppercase letter , Lowercase letter and 8 characters").show();
-            return;
-        }
+//        if (!isValidPassword(password)) {
+//            new Alert(Alert.AlertType.ERROR,
+//                    "Password must have add Uppercase letter , Lowercase letter ").show();
+//            return;
+//        }
 
 
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
@@ -107,10 +107,10 @@ public class CreateAccoutController {
         return email.matches(emailRegex);
     }
 
-    private boolean isValidPassword(String password) {
-        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z]){8,}$";
-        return password.matches(passwordRegex);
-    }
+//    private boolean isValidPassword(String password) {
+//        String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])";
+//        return password.matches(passwordRegex);
+//    }
 
 
 }

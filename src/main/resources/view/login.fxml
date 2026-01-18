@@ -4,69 +4,59 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="509.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.logingControler">
+<AnchorPane prefHeight="520.0" prefWidth="520.0" style="-fx-background-color: linear-gradient(to bottom right, #74ebd5, #ACB6E5);" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.logingControler">
+
     <children>
 
+        <!-- Card -->
+        <VBox alignment="CENTER" layoutX="60.0" layoutY="28.0" prefHeight="420" prefWidth="400" spacing="25" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 40;">
 
-        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="500.0" spacing="30.0" style="-fx-background-color: white; -fx-padding: 50;">
-            <children>
-                <VBox alignment="CENTER" spacing="10.0">
-                    <children>
+            <effect>
+                <DropShadow color="#00000033" offsetY="5" radius="20" />
+            </effect>
 
-                        <Text fill="#2c3e50" strokeType="OUTSIDE" strokeWidth="0.0" text="Loging System">
-                            <font>
-                                <Font name="System Bold" size="28.0" />
-                            </font>
-                        </Text>
-                    </children>
+            <!-- Title -->
+            <Text fill="#2c3e50" text="Welcome Back">
+                <font>
+                    <Font name="System Bold" size="28" />
+                </font>
+            </Text>
+
+            <Label text="Sign in to continue" textFill="#7f8c8d" />
+
+            <!-- Form -->
+            <VBox spacing="18">
+
+                <!-- Email -->
+                <VBox spacing="6">
+                    <Label text="Email" textFill="#34495e" />
+                    <TextField fx:id="txtEmail" prefHeight="42" prefWidth="320" promptText="example@email.com" style="-fx-background-radius: 10;                                       -fx-border-radius: 10;                                       -fx-border-color: #dcdde1;                                       -fx-padding: 10;" />
                 </VBox>
 
-                <VBox spacing="20.0" style="-fx-padding: 20 0 0 0;">
-                    <children>
-                        <Label text="Sign In to Your Account" textFill="#2c3e50">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Label>
-
-                        <VBox spacing="8.0">
-                            <children>
-                                <Label text="Email" textFill="#34495e" />
-                                <TextField fx:id="txtEmail" prefHeight="40.0" prefWidth="350.0" promptText="Enter your email" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7; -fx-padding: 10;" />
-                            </children>
-                        </VBox>
-
-                        <VBox spacing="8.0">
-                            <children>
-                                <Label text="Password" textFill="#34495e" />
-                                <PasswordField fx:id="txtPassword" prefHeight="40.0" prefWidth="350.0" promptText="Enter your password" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7; -fx-padding: 10;" />
-                            </children>
-                        </VBox>
-
-                        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="44.0" prefWidth="400.0" style="-fx-background-color: #3498db; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Sign In">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Button>
-                  <Button fx:id="btnCreateAccount" layoutX="10.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnCreateAccountOnAction" prefHeight="51.0" prefWidth="402.0" style="-fx-background-color: #90EE90; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Sing Up">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-                    </children>
+                <!-- Password -->
+                <VBox spacing="6">
+                    <Label text="Password" textFill="#34495e" />
+                    <PasswordField fx:id="txtPassword" prefHeight="42" prefWidth="320" promptText="••••••••" style="-fx-background-radius: 10;                                           -fx-border-radius: 10;                                           -fx-border-color: #dcdde1;                                           -fx-padding: 10;" />
                 </VBox>
 
-                <VBox alignment="CENTER" spacing="5.0">
-                    <children>
-                        <Label text="© 2026 Nethmal Loging Sysytem" textFill="#95a5a6" />
-                    </children>
-                </VBox>
-            </children>
+                <!-- Login Button -->
+                <Button fx:id="btnLogin" onAction="#btnLoginOnAction" prefHeight="45" prefWidth="320" style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2);                                -fx-background-radius: 25;                                -fx-text-fill: white;                                -fx-font-size: 14;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Sign In" />
+
+                <!-- Sign Up -->
+                <Button fx:id="btnCreateAccount" onAction="#btnCreateAccountOnAction" prefHeight="42" prefWidth="320" style="-fx-background-color: transparent;                                -fx-border-color: #667eea;                                -fx-border-radius: 25;                                -fx-text-fill: #667eea;                                -fx-font-weight: bold;                                -fx-cursor: hand;" text="Create New Account" />
+
+            </VBox>
+
+            <!-- Footer -->
+            <Label style="-fx-font-size: 11;" text="© 2026 Nethmal Login System" textFill="#bdc3c7" />
+
         </VBox>
+
     </children>
 </AnchorPane>
